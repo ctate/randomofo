@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  header
+    div(id='left')
+      a(href='http://veganmofo.com', target='frame')
+        img(src='images/logo.png')
+      a(class='report', href='mailto:report@randomofo.com?subject=Report a Blog') report a blog
+    div(id='right')
+      a(href='#', onclick='load(); return false', title='Next Blog')
+        span='next vegan blog'
+        img(src='images/next.png')
+    h1
+      a(target='_blank')='loading...'
+  div(id='loader')
+    div(class='title') Loading...
+  div(id='frame')
+  include ga.html

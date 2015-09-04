@@ -1,0 +1,108 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+body {
+  font-family: 'Shadows Into Light', cursive;
+  margin: 0px;
+  overflow: hidden;
+}
+header {
+  background-image: url("/images/bg.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% 50px;
+  bottom: 0px;
+  color: #fff;
+  height: 50px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+header h1 {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 18px 0px 0px 0px;
+  text-align: center;
+}
+@media only screen and (max-width: 550px) {
+  header h1 {
+    display: none;
+  }
+  header #left {
+    width: auto;
+  }
+  header #right {
+    width: auto;
+  }
+}
+iframe {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+#frame {
+  z-index: 1000;
+}
+#left {
+  float: left;
+  margin: 4px 5px;
+  width: 200px;
+}
+#left a {
+  vertical-align: top;
+}
+#left .report {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+#loader {
+  left: 0px;
+  margin-top: -70px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  z-index: -1;
+}
+#loader a {
+  color: #3fcf7d;
+}
+#loader img {
+  height: 64px;
+  width: 128px;
+}
+#loader .text {
+  font-size: 10px;
+  padding-top: 10px;
+}
+#loader .title {
+  font-size: 48px;
+  padding-bottom: 10px;
+}
+#right {
+  float: right;
+  margin: 10px 0px;
+  text-align: right;
+  width: 200px;
+}
+#right a {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+#right a img {
+  height: 36px;
+  width: 36px;
+}
+#right span {
+  display: inline-block;
+  margin-top: 5px;
+  vertical-align: top;
+}

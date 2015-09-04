@@ -1,0 +1,4 @@
+.DS_Store
+node_modules/
+src/public/components
+npm-debug.log
