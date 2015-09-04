@@ -70,7 +70,7 @@ outputs:
     filename: ga.html
     path: src/views
     spec:
-      trackingID: UA-26197095-1
+      trackingID: UA-67206210-1
   - generator: license.MITGenerator
     spec:
       copyright: $copyright
