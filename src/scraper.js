@@ -1,7 +1,7 @@
 var scraperjs = require('scraperjs'),
   fs = require('fs');
 
-scraperjs.StaticScraper.create('http://veganmofo.com/2015-blogroll')
+scraperjs.StaticScraper.create('http://veganmofo.com/blogroll')
   .scrape(function($) {
     return $('.entry-content p a').map(function() {
       var data = {};

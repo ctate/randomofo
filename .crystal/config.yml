@@ -116,7 +116,7 @@ outputs:
           data:
             name: text
             url: href
-      url: http://veganmofo.com/2015-blogroll
+      url: http://veganmofo.com/blogroll
 scripts:
   build:
     - bower install

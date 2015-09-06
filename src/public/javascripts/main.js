@@ -1,11 +1,17 @@
-var blog_i = 0;
-var sites;
+var sites, site_urls;
 var load = function() {
   $('iframe').remove();
   
-  var random = Math.floor(Math.random() * (sites.length-1));
-  var site = sites[random];
-  blog_i++;
+  if (location.hash && location.hash.length) {
+    var site = {
+      name: 'randomofo',
+      url: location.hash.substr(1)
+    };
+    location.hash = '';
+  } else {
+    var random = Math.floor(Math.random() * (sites.length-1));
+    var site = sites[random];
+  }
   
   var site_title = site.name;
   var site_url = site.url;
@@ -54,9 +60,30 @@ $(window).load(function() {
     type: 'GET',
     url: '/data/veganmofo.json',
     dataType: 'json',
-    success: function(json) {
-      sites = json;
-      load();
+    success: function(results) {
+      $.ajax({
+        type: 'GET',
+        url: '/data/ignore.json',
+        dataType: 'json',
+        success: function(ignore) {
+          var length = ignore.length;
+          for (var i = 0; i < length; i++) {
+            ignore.push('www.' + ignore[i]);
+          }
+          
+          site_urls = [];
+          sites = [];
+          for (var i = 0; i < results.length; i++) {
+            var parser = document.createElement('a');
+            parser.href = results[i].url;
+            if (ignore.indexOf(parser.hostname) === -1) {
+              sites.push(results[i]);
+              site_urls.push(results[i].url);
+            }
+          }
+          load();
+        }
+      });
     }
   });
 });
